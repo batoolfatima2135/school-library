@@ -20,4 +20,4 @@ rental1 = Rental.new('2017-12-22', book1, person1)
 puts rental1.book.title
 puts rental1.person.age
 puts student2.classroom.label
-class1.students.map(&:age)
+puts class1.students.map(&:age)
