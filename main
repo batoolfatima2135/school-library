@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+require './app'
+
+def main
+    puts
+    puts "Please choose an option by entering a number:"
+    puts "1 - List all books"
+    puts "2 - List all people"
+    puts "3 - Create a person"
+    puts "4 - Create a book"
+    puts "5 - Create a rental"
+    puts "6 - List all rentals for a given person id"
+    puts "7 - Exit"
+    number = gets.chomp    
+    call(number.to_i)
+end
+ def call(number)
+    app = App.new()
+    case number
+    when 1
+     app.list_books
+     main()
+    when 2
+     app.list_persons
+     main()
+    when 3 
+     print "Do you want to create student (1) or a teacher (2)? [Input the number]: "
+     person_code = gets.chomp
+     app.create_person(person_code.to_i)
+     main()
+    when 4
+      print "Title: "
+      title = gets.chomp
+      print "Author: "
+      author = gets.chomp
+      app.create_book(title, author)
+      main()
+    when 5
+      app.create_rental
+      main() 
+    when 6
+      print "ID of person: "
+      id = gets.chomp.to_i
+      app.get_rental(id)
+      main()    
+    when 7
+      puts "Thank you for using this App"
+    else
+      puts "Enter valid number"
+    end
+  end
+
+puts "Welcome to School Library App!"
+main()
