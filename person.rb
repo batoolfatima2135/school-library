@@ -14,7 +14,7 @@ class Person < Nameable
   attr_reader :id
 
   def can_use_services?
-    @age >= 18 || @parent_permission
+    of_age? || @parent_permission
   end
 
   def correct_name
