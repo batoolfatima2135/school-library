@@ -50,6 +50,7 @@
 - **Save records of who borrowed a given book and when**
 - **Decorator pattern**
 - **Associations**
+- **Basic UI**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -116,7 +117,6 @@ Example command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **Web interface**
-- [ ] **add basic UI**
 - [ ] **unit tests**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
