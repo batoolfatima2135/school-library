@@ -5,6 +5,7 @@ require './classroom'
 require './rental'
 require './book'
 
+
 class App
   def initialize()
     @all_books = []
@@ -39,6 +40,7 @@ class App
     permission_values = %w[n N]
     person = Student.new(age, name, permission_values.include?(permission))
     @all_persons.push(person)
+    binding.pry
   end
 
   def create_teacher
@@ -48,7 +50,7 @@ class App
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    person = Teacher.new(age, specialization, name)
+    person = Teacher.new(age, specialization)
     @all_persons.push(person)
   end
 
