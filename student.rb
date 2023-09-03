@@ -1,10 +1,12 @@
 require './person'
+require 'pry'
 
 class Student < Person
-  attr_reader :classroom
+  attr_reader :classroom, :parent_permission
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name, parent_permission, id)
     super(age, name)
+    @id = id if id
     @parent_permission = parent_permission
   end
 

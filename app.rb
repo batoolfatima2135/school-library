@@ -74,7 +74,7 @@ class App
     person_index = gets.chomp.to_i
     print 'Date: '
     date = gets.chomp
-    @rental_manager.create_rental(date, all_books[book_index], all_persons[person_index])
+    @rental_manager.create_rental(date, all_books, all_persons, book_index, person_index)
     puts 'Rental created successfully'
   end
 
@@ -82,9 +82,13 @@ class App
     print 'ID of person: '
     id = gets.chomp.to_i
     person = @rental_manager.get_rental(id, all_persons)
-    puts 'Rentals:'
-    person.rentals.each do |rental|
-      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+    if person
+      puts 'Rentals:'
+      person.rentals.each do |rental|
+        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      end
+    else
+      puts 'No rentals'
     end
   end
 end
