@@ -25,7 +25,6 @@ describe Person do
     end
   end
 
-
   context 'Should add rentals correctly' do
     before(:each) do
       @person = described_class.new(25, 'John')

@@ -1,4 +1,4 @@
-require '././trimmer_decorator.rb'
+require '././trimmer_decorator'
 
 describe TrimmerDecorator do
   context 'Passing a name' do

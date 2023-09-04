@@ -25,13 +25,12 @@ describe Book do
     end
 
     it 'should send rental class correct parameters' do
-     
       allow(Rental).to receive(:new).with(@date, @book, @person)
       @book.add_rental(@date, @person)
     end
 
     it 'should get rental object' do
-\
+ \
       allow(Rental).to receive(:new).and_return(@rental)
       @book.add_rental(@date, @person)
     end
