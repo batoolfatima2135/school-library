@@ -1,5 +1,4 @@
 require './person'
-require 'pry'
 
 class Student < Person
   attr_reader :classroom, :parent_permission
