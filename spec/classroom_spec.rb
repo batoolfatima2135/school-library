@@ -1,5 +1,5 @@
-require_relative '../classroom'
-require_relative '../student'
+require '././classroom'
+require '././student'
 
 describe Classroom do
   context 'It should create classroom and add student' do
