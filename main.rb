@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+
 require './app'
 require './book_manager'
 require './rental_manager'
