@@ -29,38 +29,47 @@ class App
       puts 'Enter valid number'
       main
     end
+    puts 'Person created successfully'
   end
 
-  def create_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-    @book_manager.create_book(title, author)
-    puts 'Book created successfully'
-  end
-
-  def create_person
-    print 'Do you want to create student (1) or a teacher (2)? [Input number]: '
-    person_code = gets.chomp.to_i
+  def create_student
     print 'Age: '
     age = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
-    if person_code == 1
-      print 'Has parent permission? [Y/N]: '
-      permission = gets.chomp
-      permission_values = %w[n N]
-      @person_manager.create_student(age, name, permission_values.include?(permission))
-    else
-      print 'Specialization: '
-      specialization = gets.chomp
-      @person_manager.create_teacher(age, name, specialization)
-    end
-    puts 'Person created successfully'
+    print 'Has parent permission? [Y/N]: '
+    permission = gets.chomp
+    permission_values = %w[n N]
+    person = Student.new(age, name, permission_values.include?(permission))
+    @all_persons.push(person)
   end
 
-  def create_rental(all_books, all_persons)
+  def create_teacher
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp
+    print 'Specialization: '
+    specialization = gets.chomp
+    person = Teacher.new(age, specialization, name)
+    @all_persons.push(person)
+  end
+
+  def list_books
+    puts @all_books.inspect
+    @all_books.each do |book|
+      puts "Title: \"#{book.title}\", Author: #{book.author}"
+    end
+  end
+
+  def list_persons
+    @all_persons.each do |person|
+      person_type = person.instance_of?(Student) ? 'Student' : 'Teacher'
+      puts "[#{person_type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
+  end
+
+  def create_rental
     puts 'Select a book from the following list by number'
     all_books.each_with_index do |book, index|
       puts "#{index}) Title: #{book.title}, Author: #{book.author}"
@@ -74,7 +83,7 @@ class App
     person_index = gets.chomp.to_i
     print 'Date: '
     date = gets.chomp
-    @rental_manager.create_rental(date, all_books, all_persons, book_index, person_index)
+    @rental_manager.create_rental(date, all_books[book_index], all_persons[person_index])
     puts 'Rental created successfully'
   end
 
@@ -90,5 +99,26 @@ class App
     else
       puts 'No rentals'
     end
+  end
+
+  def check_person_code(code, age, name)
+    if code == 1
+      create_student(age, name)
+    else
+      create_teacher(age, name)
+    end
+  end
+
+  def create_student(age, name)
+    print 'Has parent permission? [Y/N]: '
+    permission = gets.chomp
+    permission_values = %w[n N]
+    @person_manager.create_student(age, name, permission_values.include?(permission))
+  end
+
+  def create_teacher(age, name)
+    print 'Specialization: '
+    specialization = gets.chomp
+    @person_manager.create_teacher(age, name, specialization)
   end
 end
