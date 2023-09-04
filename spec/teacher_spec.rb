@@ -9,7 +9,7 @@ describe Teacher do
     end
 
     it 'should have always permission to use services' do
-      expect(teacher.can_use_services).to eql true
+      expect(teacher.can_use_services?).to eql true
     end
   end
 end

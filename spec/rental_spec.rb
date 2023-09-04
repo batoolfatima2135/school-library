@@ -1,5 +1,4 @@
 require '././rental'
-require 'spec_helper'
 
 describe Rental do
   context 'Create objects correctly' do
