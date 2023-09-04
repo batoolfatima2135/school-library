@@ -29,47 +29,29 @@ class App
       puts 'Enter valid number'
       main
     end
+  end
+
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+    @book_manager.create_book(title, author)
+    puts 'Book created successfully'
+  end
+
+  def create_person
+    print 'Do you want to create student (1) or a teacher (2)? [Input number]: '
+    person_code = gets.chomp.to_i
+    print 'Age: '
+    age = gets.chomp.to_i
+    print 'Name: '
+    name = gets.chomp
+    check_person_code(person_code, age, name)
     puts 'Person created successfully'
   end
 
-  def create_student
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Has parent permission? [Y/N]: '
-    permission = gets.chomp
-    permission_values = %w[n N]
-    person = Student.new(age, name, permission_values.include?(permission))
-    @all_persons.push(person)
-  end
-
-  def create_teacher
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Specialization: '
-    specialization = gets.chomp
-    person = Teacher.new(age, specialization, name)
-    @all_persons.push(person)
-  end
-
-  def list_books
-    puts @all_books.inspect
-    @all_books.each do |book|
-      puts "Title: \"#{book.title}\", Author: #{book.author}"
-    end
-  end
-
-  def list_persons
-    @all_persons.each do |person|
-      person_type = person.instance_of?(Student) ? 'Student' : 'Teacher'
-      puts "[#{person_type}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-  end
-
-  def create_rental
+  def create_rental(all_books, all_persons)
     puts 'Select a book from the following list by number'
     all_books.each_with_index do |book, index|
       puts "#{index}) Title: #{book.title}, Author: #{book.author}"
@@ -91,13 +73,9 @@ class App
     print 'ID of person: '
     id = gets.chomp.to_i
     person = @rental_manager.get_rental(id, all_persons)
-    if person
-      puts 'Rentals:'
-      person.rentals.each do |rental|
-        puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
-      end
-    else
-      puts 'No rentals'
+    puts 'Rentals:'
+    person.rentals.each do |rental|
+      puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
     end
   end
 
