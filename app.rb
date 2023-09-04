@@ -47,16 +47,7 @@ class App
     age = gets.chomp.to_i
     print 'Name: '
     name = gets.chomp
-    if person_code == 1
-      print 'Has parent permission? [Y/N]: '
-      permission = gets.chomp
-      permission_values = %w[n N]
-      @person_manager.create_student(age, name, permission_values.include?(permission))
-    else
-      print 'Specialization: '
-      specialization = gets.chomp
-      @person_manager.create_teacher(age, name, specialization)
-    end
+    check_person_code(person_code, age, name)
     puts 'Person created successfully'
   end
 
@@ -86,5 +77,26 @@ class App
     person.rentals.each do |rental|
       puts "Date: #{rental.date}, Book: \"#{rental.book.title}\" by #{rental.book.author}"
     end
+  end
+
+  def check_person_code(code, age, name)
+    if code == 1
+      create_student(age, name)
+    else
+      create_teacher(age, name)
+    end
+  end
+
+  def create_student(age, name)
+    print 'Has parent permission? [Y/N]: '
+    permission = gets.chomp
+    permission_values = %w[n N]
+    @person_manager.create_student(age, name, permission_values.include?(permission))
+  end
+
+  def create_teacher(age, name)
+    print 'Specialization: '
+    specialization = gets.chomp
+    @person_manager.create_teacher(age, name, specialization)
   end
 end
