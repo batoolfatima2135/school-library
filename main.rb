@@ -1,4 +1,3 @@
-
 require './app'
 require './book_manager'
 require './rental_manager'
