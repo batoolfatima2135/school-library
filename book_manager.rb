@@ -1,4 +1,5 @@
 require './book'
+require 'json'
 
 class BookManager
   attr_accessor :all_books

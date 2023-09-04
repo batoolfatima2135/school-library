@@ -15,13 +15,13 @@ class PersonManager
     end
   end
 
-  def create_student(age, name, permission)
-    person = Student.new(age, name, parent_permission: permission)
+  def create_student(age, name, permission, id = nil)
+    person = Student.new(age, name, permission, id)
     @all_persons.push(person)
   end
 
-  def create_teacher(age, name, specialization)
-    person = Teacher.new(age, name, specialization)
+  def create_teacher(age, name, specialization, id = nil)
+    person = Teacher.new(age, name, specialization, id)
     @all_persons.push(person)
   end
 end
