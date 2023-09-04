@@ -9,20 +9,21 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Install](#install)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[OOP school library\] ](#-oop-school-library-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Setup](#setup)
+    - [Install](#install)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -52,7 +53,6 @@
 - **Associations**
 - **Basic UI**
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
@@ -67,15 +67,11 @@ Coming soon
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-
 To get a local copy up and running, follow these steps.
-
-
 
 ### Setup
 
 Clone this repository to your desired folder:
-
 
 Example commands:
 
@@ -83,7 +79,6 @@ Example commands:
   cd my-folder
   git clone https://github.com/batoolfatima2135/school-library.git
 ```
-
 
 ### Install
 
@@ -102,13 +97,16 @@ Example command:
 
 ## 👥 Authors <a name="authors"></a>
 
-
-
 👤 **Batool Fatima**
 
 - GitHub: [@githubhandle](https://github.com/batoolfatima2135)
 - Twitter: [@twitterhandle](https://twitter.com/batool2135)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/batool-fatima-515531196/)
+
+👤 **MoFuhidy**
+
+- GitHub: [@mofuhidy](https://github.com/Mofuhidy)
+- LinkedIn: [mofuhidy](https://linkedin.com/in/mo-fuhidy)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -135,7 +133,6 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-
 If you like this project give it a star
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -148,12 +145,10 @@ I would like to thank microverse for giving me chance to work on this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
