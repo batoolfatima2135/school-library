@@ -1,22 +1,16 @@
-#!/usr/bin/env ruby
 require './app'
 require './book_manager'
 require './rental_manager'
 require './person_manager'
-require './store_data'
-require './retrive_data'
 
 class Main
   def initialize
     @person_manager = PersonManager.new
     @book_manager = BookManager.new
     @rental_manager = RentalManager.new
-    @store_data = StoreData.new
-    @retrive_data = RetriveData.new
   end
 
   def display_options
-    puts
     puts 'Please choose an option by entering a number:'
     puts '1 - List all books'
     puts '2 - List all people'
@@ -28,9 +22,6 @@ class Main
   end
 
   def run
-    @retrive_data.get_books(@book_manager)
-    @retrive_data.get_persons(@person_manager)
-    @retrive_data.get_rentals(@rental_manager, @person_manager.all_persons, @book_manager.all_books)
     puts 'Welcome to School Library App!'
     loop do
       display_options
@@ -46,9 +37,6 @@ class Main
 
   def exit_app
     puts 'Thank you for using this App'
-    @store_data.store_books(@book_manager.all_books)
-    @store_data.store_persons(@person_manager.all_persons)
-    @store_data.store_rentals(@rental_manager.all_rentals)
   end
 end
 
